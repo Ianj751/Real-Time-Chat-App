@@ -8,7 +8,7 @@ function Messages() {
     const [messages, SetMessages] = useState([]);
     useEffect( ()=>{
         const msgsRef = collection(db, 'Messages');
-        const q = query(msgsRef, orderBy('timestamp'), limit(25));
+        const q = query(msgsRef, orderBy('timestamp'));
         
         
         const unsubscribe = onSnapshot(q, (querySnapshot) => {
